@@ -15,6 +15,10 @@ namespace API.Extensions
                 );
             services.AddCors();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            
+            // used to scan all assemblies in the current application domain for types that implement Profile (AutoMapper profiles). This allows AutoMapper to discover and register the profiles automatically.
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
     }
 }

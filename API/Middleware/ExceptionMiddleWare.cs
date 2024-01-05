@@ -18,6 +18,7 @@ namespace API.Middleware
             _next = next;
         }
 
+        //The InvokeAsync method is part of a middleware component, and it is invoked when an HTTP request is processed by the middleware pipeline.
         public async Task InvokeAsync(HttpContext context)
         {
             try
